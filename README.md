@@ -12,19 +12,22 @@ This repo includes the KiCAD hardware files, the necessary firmware (C) and meas
 ![Beschreibung](0_docu/concept_system.png)
 
 ## Parameter Range
-das
+Output range +-200µA with +-15V voltage cap. Using waveform generation on MCU (Pi Pico) time resolution around 2.5µs practical limit.
 
 ## Hardware Design
-das
+See 1_kicad directory for schematics and PCB layout. See [BOM](1_kicad/ibom.html) for an interactive bill of materials.
 
 ## Using the firmware
-das
+Recommened IDE: [VS code](https://code.visualstudio.com/) combined with the Raspberry Pi Pico extension.
+Create a new C/C++ Project with the extension using the existing firmware_stimPlat_v3.c file.
+Adapt the firmware_stimPlat_v3.c for your needed stimulation protocol and click on "Run Project (USB)" with connected platform in order to start the protocol. Outputs and debugging of the platform can be done using the Serial Monitor.
 
 ## Actual state
 There will be no further improvements. There is still the development of the stimulation platform (Gen4).
 ### Restrictions
-- dasda
+- While theoretical temporal limit is lower MCU here limits the possible realized frequencies. Frequencies of sine waves is modulated by number of LUT values for waveform generation. Calibration of used LUT length and resulting wavelet frequecy is recommended. Instead fixed LUT length and timer can be used (already implemented in Firmware) but restricts the realizable frequencies more because temporal resolution gets worse (because of timer overhead). Found temporal limit of around 10µs with enabled timer.
+- Hardware natively supports alternative FPGA control over PMOD connector
 
 ## Further information
-We have a paper: 
+Further design and characterization information can be found in our paper. 
 
