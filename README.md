@@ -15,14 +15,14 @@ This repo includes the KiCAD hardware files, the necessary firmware (C) and meas
 Output range +-200µA with +-15V voltage supply (either directy or using additional 5V USB-C supply). Using waveform generation on MCU (Pi Pico) time resolution around 2.5µs practical limit.
 
 ## Hardware Design
-See 1_kicad directory for schematics and PCB layout. See <a href="1_kicad/ibom.html" target="_blank">BOM</a>
- [BOM](1_kicad/ibom.html) for an interactive bill of materials.
+See 1_kicad directory for schematics and PCB layout. See <a href="https://html-preview.github.io/?url=https://github.com/AErbsloeh/stimulation_genv3/blob/add-readme/1_kicad/ibom.html" target="_blank">BOM</a> for an interactive bill of materials.
 
 ## Using the firmware
 Recommened IDE: [VS code](https://code.visualstudio.com/) combined with the Raspberry Pi Pico extension.
 Create a new C/C++ Project with the extension using the existing firmware_stimPlat_v3.c file from 2_firmware directory.
 Adapt the firmware_stimPlat_v3.c for your needed stimulation protocol and click on "Run Project (USB)" with connected platform in order to start the protocol. Outputs and debugging of the platform can be done using the Serial Monitor.
-Alternatively, static characterization was done using MicroPython control code on Pico and commuicationg via UART from computer using another python script. See directory 3_static_characterization_control.
+
+Alternatively, static characterization can be done using MicroPython control code on Pico and commuicationg via UART from computer using another python script. See directory 3_static_characterization_control. In general if speed is not an issue, e.g. low frequency rectangular waveforms, MicroPython control is an easy to use alternative.
 
 ## Actual state
 There will be no further improvements. There is still the development of the stimulation platform (Gen4).
